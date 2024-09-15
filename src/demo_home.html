@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/assets/fav-icon.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lebaba | A Full-stack MERN E-commerce Project</title>
+
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            maxWidth: {
+              "screen-2xl": "1400px",
+              "custom-1200": "1200px",
+              "custom-900": "900px",
+            },
+            colors: {
+              primary: "#ed3849",
+              "primary-dark": "#d23141",
+              "primary-light": "#f4e5ec",
+              "text-dark": "#0f172a",
+              "text-light": "#64748b",
+              "extra-light": "#f8fafc",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./css/app.css" />
+
+    <!-- remix icon -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+  </head>
+  <body>
+    <div id="root">
+        <!-- header section -->
+      <header class="fixed-nav-bar w-nav">
+        <nav
+          class="max-w-screen-2xl mx-auto px-4 flex justify-between items-center"
+        >
+          <ul class="nav__links">
+            <li class="link"><a href="/">Home</a></li>
+            <li class="link"><a href="/shop">Shop</a></li>
+            <li class="link"><a href="/">Pages</a></li>
+            <li class="link"><a href="/contact">Contact</a></li>
+          </ul>
+          <div class="nav__logo">
+            <a href="/">Lebaba<span>.</span></a>
+          </div>
+          <div class="nav__icons relative">
+            <span
+              ><a href="/search"><i class="ri-search-line"></i></a></span
+            ><span
+              ><button class="hover:text-primary">
+                <i class="ri-shopping-bag-line"></i
+                ><sup
+                  class="text-sm inline-block px-1.5 text-white rounded-full bg-primary text-center"
+                  >0</sup
+                >
+              </button></span
+            ><span
+              ><img
+                src="./assets/avatar.png"
+                alt="User Avatar"
+                class="size-6 rounded-full cursor-pointer"
+            /></span>
+          </div>
+        </nav>
+      </header>
+
+      <!-- hero or banner section -->
+      <section class="section__container header__container">
+        <div class="header__content z-30">
+          <h4>UP TO 20% DISCOUNT ON</h4>
+          <h1>Girl's Fashion</h1>
+          <p>
+            Discover the latest trends and express your unique style with our
+            Women's Fashion website. Explore a curated collection of clothing,
+            accessories, and footwear that caters to every taste and occasion.
+          </p>
+          <button class="btn"><a href="/shop">EXPLORE NOW</a></button>
+        </div>
+        <div class="header__image">
+          <img src="./assets/hero.png" alt="header" />
+        </div>
+      </section>
+
+      <!-- categories section -->
+
+      <section class="product__grid">
+        <a class="categories__card" href="/categories/accessories"
+          ><img src="./assets/category-1.jpg" alt="Accessories" />
+          <h4>Accessories</h4></a
+        ><a class="categories__card" href="/categories/dress"
+          ><img src="./assets/category-2.jpg" alt="Dress Collection" />
+          <h4>Dress Collection</h4></a
+        ><a class="categories__card" href="/categories/jewellery"
+          ><img src="./assets/category-3.jpg" alt="Jewellery" />
+          <h4>Jewellery</h4></a
+        ><a class="categories__card" href="/categories/cosmetics"
+          ><img src="./assets/category-4.jpg" alt="Cosmetics" />
+          <h4>Cosmetics</h4></a
+        >
+      </section>
+
+      <!-- new trends section -->
+      <section class="section__container hero__container">
+        <div class="hero__card">
+          <img src="./assets/card-1.png" alt="Womens Shirt" />
+          <div class="hero__content">
+            <p>2023 Trend</p>
+            <h4>Womens Shirt</h4>
+            <a href="#">Discover More +</a>
+          </div>
+        </div>
+        <div class="hero__card">
+          <img src="./assets/card-2.png" alt="Womens Dresses" />
+          <div class="hero__content">
+            <p>2023 Trend</p>
+            <h4>Womens Dresses</h4>
+            <a href="#">Discover More +</a>
+          </div>
+        </div>
+        <div class="hero__card">
+          <img src="./assets/card-3.png" alt="Womens Casuals" />
+          <div class="hero__content">
+            <p>2023 Trend</p>
+            <h4>Womens Casuals</h4>
+            <a href="#">Discover More +</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trending Products -->
+      <section class="section__container product__container">
+        <h2 class="section__header">Trending Products</h2>
+        <p class="section__subheader mb-12">
+          Discover the Hottest Picks: Elevate Your Style with Our Curated
+          Collection of Trending Women's Fashion Products.
+        </p>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+        >
+          <div class="product__card">
+            <div class="relative">
+              <a href="/shop/66d45fb27e580755d843823e"
+                ><img
+                  src="https://res.cloudinary.com/dn2gccqlw/image/upload/v1725194127/ibwqr1ntgpoil0bhbeir.jpg"
+                  alt="Men Casual tShirt"
+                  class="max-h-96 md:h-64 w-full object-cover hover:scale-105 transition-all duration-300"
+              /></a>
+              <div class="hover:block absolute top-3 right-3">
+                <button>
+                  <i
+                    class="ri-shopping-cart-2-line bg-primary p-1.5 text-white hover:bg-primary-dark"
+                  ></i>
+                </button>
+              </div>
+            </div>
+            <div class="product__card__content">
+              <h4>Men Casual tShirt</h4>
+              <p>$100</p>
+              <div class="product__rating">
+                <span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span>
+              </div>
+            </div>
+          </div>
+          <div class="product__card">
+            <div class="relative">
+              <a href="/shop/66c593cf25dce5322a47fd8d"
+                ><img
+                  src="https://res.cloudinary.com/dn2gccqlw/image/upload/v1724224428/ajk4ezz9eebtoddktuyu.webp"
+                  alt="Casual Pants for Women"
+                  class="max-h-96 md:h-64 w-full object-cover hover:scale-105 transition-all duration-300"
+              /></a>
+              <div class="hover:block absolute top-3 right-3">
+                <button>
+                  <i
+                    class="ri-shopping-cart-2-line bg-primary p-1.5 text-white hover:bg-primary-dark"
+                  ></i>
+                </button>
+              </div>
+            </div>
+            <div class="product__card__content">
+              <h4>Casual Pants for Women</h4>
+              <p>$119</p>
+              <div class="product__rating">
+                <span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span>
+              </div>
+            </div>
+          </div>
+          <div class="product__card">
+            <div class="relative">
+              <a href="/shop/66bfc9b31288cb7ded02c2b9"
+                ><img
+                  src="https://images.unsplash.com/photo-1484328256245-34b71758c30b?q=80&amp;w=2073&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Casual Pants"
+                  class="max-h-96 md:h-64 w-full object-cover hover:scale-105 transition-all duration-300"
+              /></a>
+              <div class="hover:block absolute top-3 right-3">
+                <button>
+                  <i
+                    class="ri-shopping-cart-2-line bg-primary p-1.5 text-white hover:bg-primary-dark"
+                  ></i>
+                </button>
+              </div>
+            </div>
+            <div class="product__card__content">
+              <h4>Casual Pants</h4>
+              <p>$78</p>
+              <div class="product__rating">
+                <span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-line"></span>
+              </div>
+            </div>
+          </div>
+          <div class="product__card">
+            <div class="relative">
+              <a href="/shop/66bee99f8e861d676744653e"
+                ><img
+                  src="https://images.unsplash.com/photo-1587467442586-7bcc51828a10?q=80&amp;w=1974&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Diamond Earrings"
+                  class="max-h-96 md:h-64 w-full object-cover hover:scale-105 transition-all duration-300"
+              /></a>
+              <div class="hover:block absolute top-3 right-3">
+                <button>
+                  <i
+                    class="ri-shopping-cart-2-line bg-primary p-1.5 text-white hover:bg-primary-dark"
+                  ></i>
+                </button>
+              </div>
+            </div>
+            <div class="product__card__content">
+              <h4>Diamond Earrings</h4>
+              <p>$299.99 <s>$349.99</s></p>
+              <div class="product__rating">
+                <span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-line"></span>
+              </div>
+            </div>
+          </div>
+          <div class="product__card">
+            <div class="relative">
+              <a href="/shop/66bee99f8e861d676744653b"
+                ><img
+                  src="https://images.unsplash.com/photo-1631214500115-598fc2cb8d2d?q=80&amp;w=1925&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Matte Lipstick"
+                  class="max-h-96 md:h-64 w-full object-cover hover:scale-105 transition-all duration-300"
+              /></a>
+              <div class="hover:block absolute top-3 right-3">
+                <button>
+                  <i
+                    class="ri-shopping-cart-2-line bg-primary p-1.5 text-white hover:bg-primary-dark"
+                  ></i>
+                </button>
+              </div>
+            </div>
+            <div class="product__card__content">
+              <h4>Matte Lipstick</h4>
+              <p>$19.99</p>
+              <div class="product__rating">
+                <span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-line"></span>
+              </div>
+            </div>
+          </div>
+          <div class="product__card">
+            <div class="relative">
+              <a href="/shop/66bee99f8e861d676744653c"
+                ><img
+                  src="https://images.unsplash.com/photo-1485527691629-8e370684924c?q=80&amp;w=2074&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Silk Scarf"
+                  class="max-h-96 md:h-64 w-full object-cover hover:scale-105 transition-all duration-300"
+              /></a>
+              <div class="hover:block absolute top-3 right-3">
+                <button>
+                  <i
+                    class="ri-shopping-cart-2-line bg-primary p-1.5 text-white hover:bg-primary-dark"
+                  ></i>
+                </button>
+              </div>
+            </div>
+            <div class="product__card__content">
+              <h4>Silk Scarf</h4>
+              <p>$29.99 <s>$39.99</s></p>
+              <div class="product__rating">
+                <span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-line"></span>
+              </div>
+            </div>
+          </div>
+          <div class="product__card">
+            <div class="relative">
+              <a href="/shop/66bee99f8e861d676744653a"
+                ><img
+                  src="https://images.unsplash.com/photo-1631097969294-c38afba59496?q=80&amp;w=2070&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Gold Necklace"
+                  class="max-h-96 md:h-64 w-full object-cover hover:scale-105 transition-all duration-300"
+              /></a>
+              <div class="hover:block absolute top-3 right-3">
+                <button>
+                  <i
+                    class="ri-shopping-cart-2-line bg-primary p-1.5 text-white hover:bg-primary-dark"
+                  ></i>
+                </button>
+              </div>
+            </div>
+            <div class="product__card__content">
+              <h4>Gold Necklace</h4>
+              <p>$199.99</p>
+              <div class="product__rating">
+                <span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-line"></span>
+              </div>
+            </div>
+          </div>
+          <div class="product__card">
+            <div class="relative">
+              <a href="/shop/66bee99f8e861d676744653d"
+                ><img
+                  src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&amp;w=2073&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Cocktail Dress"
+                  class="max-h-96 md:h-64 w-full object-cover hover:scale-105 transition-all duration-300"
+              /></a>
+              <div class="hover:block absolute top-3 right-3">
+                <button>
+                  <i
+                    class="ri-shopping-cart-2-line bg-primary p-1.5 text-white hover:bg-primary-dark"
+                  ></i>
+                </button>
+              </div>
+            </div>
+            <div class="product__card__content">
+              <h4>Cocktail Dress</h4>
+              <p>$89.99</p>
+              <div class="product__rating">
+                <span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-fill"></span
+                ><span class="ri-star-line"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product__btn"><button class="btn">Load More</button></div>
+      </section>
+
+      <!--  20% Discount promotions section -->
+      <section class="section__container deals__container">
+        <div class="deals__image">
+          <img src="./assets/deals.png" alt="deals" />
+        </div>
+        <div class="deals__content">
+          <h5>Get Up To 20% Discount</h5>
+          <h4>Deals Of This Month</h4>
+          <p>
+            Our Women's Fashion Deals of the Month are here to make your style
+            dreams a reality without breaking the bank. Discover a curated
+            collection of exquisite clothing, accessories, and footwear, all
+            handpicked to elevate your wardrobe.
+          </p>
+          <div class="deals__countdown flex-wrap">
+            <div class="deals__countdown__card">
+              <h4>14</h4>
+              <p>Days</p>
+            </div>
+            <div class="deals__countdown__card">
+              <h4>20</h4>
+              <p>Hours</p>
+            </div>
+            <div class="deals__countdown__card">
+              <h4>15</h4>
+              <p>Mins</p>
+            </div>
+            <div class="deals__countdown__card">
+              <h4>05</h4>
+              <p>Secs</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- services of company -->
+      <section class="section__container banner__container">
+        <div class="banner__card">
+          <span><i class="ri-truck-line"></i></span>
+          <h4>Free Delivery</h4>
+          <p>
+            Offers convenience and the ability to shop from anywhere, anytime.
+          </p>
+        </div>
+        <div class="banner__card">
+          <span><i class="ri-money-dollar-circle-line"></i></span>
+          <h4>100% Money Back Guaranty</h4>
+          <p>
+            E-commerce have a review system where customers can share feedback.
+          </p>
+        </div>
+        <div class="banner__card">
+          <span><i class="ri-user-voice-fill"></i></span>
+          <h4>Strong Support</h4>
+          <p>
+            Offer customer support services to assist customers with queries and
+            issues.
+          </p>
+        </div>
+      </section>
+
+      <!-- blogs section -->
+      <section class="section__container blog__container">
+        <h2 class="section__header">Latest From Blog</h2>
+        <p class="section__subheader">
+          Elevate your wardrobe with our freshest style tips, trends, and
+          inspiration on our blog.
+        </p>
+        <div
+          class="md:p-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+        >
+          <div
+            class="blog__card cursor-pointer hover:scale-105 transition-all duration-200"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&amp;w=2070&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Mastering the Art of Capsule Wardrobes"
+            />
+            <div class="blog__card__content">
+              <h6>Timeless Elegance</h6>
+              <h4>Mastering the Art of Capsule Wardrobes</h4>
+              <p>12th August 2022</p>
+            </div>
+          </div>
+          <div
+            class="blog__card cursor-pointer hover:scale-105 transition-all duration-200"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1700159017572-de76bb0c5719?q=80&amp;w=2072&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Unveiling the Hottest Beachwear Trends"
+            />
+            <div class="blog__card__content">
+              <h6>Summer Breeze</h6>
+              <h4>Unveiling the Hottest Beachwear Trends</h4>
+              <p>18th January 2023</p>
+            </div>
+          </div>
+          <div
+            class="blog__card cursor-pointer hover:scale-105 transition-all duration-200"
+          >
+            <img
+              src="https://plus.unsplash.com/premium_photo-1682142715511-27bfbfdc044f?q=80&amp;w=2069&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Navigating the World of Women's Tailoring"
+            />
+            <div class="blog__card__content">
+              <h6>Power Dressing</h6>
+              <h4>Navigating the World of Women's Tailoring</h4>
+              <p>5th January 2025</p>
+            </div>
+          </div>
+          <div
+            class="blog__card cursor-pointer hover:scale-105 transition-all duration-200"
+          >
+            <img
+              src="https://plus.unsplash.com/premium_photo-1713720663924-4e3fe8f20f79?q=80&amp;w=1948&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="The World's Best Fashion Fair 2025"
+            />
+            <div class="blog__card__content">
+              <h6>New York Times</h6>
+              <h4>The World's Best Fashion Fair 2025</h4>
+              <p>25th May 2025</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer section -->
+      <footer class="section__container footer__container">
+        <div class="footer__col">
+          <h4>CONTACT INFO</h4>
+          <p>
+            <span><i class="ri-map-pin-2-fill"></i></span>123, London Bridge
+            Street, London
+          </p>
+          <p>
+            <span><i class="ri-mail-fill"></i></span>support@Lebaba.com
+          </p>
+          <p>
+            <span><i class="ri-phone-fill"></i></span>(+012) 3456 789
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>COMPANY</h4>
+          <a href="#">Home</a><a href="#">About Us</a
+          ><a href="#">Work With Us</a><a href="#">Our Blog</a
+          ><a href="#">Terms &amp; Conditions</a>
+        </div>
+        <div class="footer__col">
+          <h4>USEFUL LINK</h4>
+          <a href="#">Help</a><a href="#">Track My Order</a><a href="#">Men</a
+          ><a href="#">Women</a><a href="#">Dresses</a>
+        </div>
+        <div class="footer__col">
+          <h4>INSTAGRAM</h4>
+          <div class="instagram__grid">
+            <img src="./assets/instagram-1.jpg" alt="instagram" /><img
+              src="./assets/instagram-5.jpg"
+              alt="instagram"
+            /><img src="./assets/instagram-2.jpg" alt="instagram" />
+            <img
+              src="./assets/instagram-3.jpg"
+              alt="instagram"
+            /><img src="./assets/instagram-4.jpg" alt="instagram" /><img
+              src="./assets/instagram-6.jpg"
+              alt="instagram"
+            />
+          </div>
+        </div>
+      </footer>
+      <div class="footer__bar">
+        Copyright © 2025 Web Design Mastery. All rights reserved.
+      </div>
+    </div>
+  </body>
+</html>
