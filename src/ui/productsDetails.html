@@ -1,0 +1,150 @@
+<>
+          <section className="section__container rounded bg-primary-light">
+                <h2 className="section__header">Single Product Page</h2>
+                <div className="section__subheader space-x-2">
+                    <span className='hover:text-primary'><Link to="/">home</Link></span>
+                    <i className="ri-arrow-right-s-line"></i>
+                    <span className='hover:text-primary'><Link to="/shop">shop</Link></span>
+                    <i className="ri-arrow-right-s-line"></i>
+                    <span className='hover:text-primary'>Product Name</span>
+                </div>
+            </section>
+
+<!--         products container -->
+  <section className="section__container mt-8">
+                <div className="flex flex-col items-center md:flex-row gap-8">
+                    {/* Product Image */}
+                    <div className="w-full md:w-1/2">
+                        <img
+                            src="product1.png"
+                            alt={singleProduct.name}
+                            className="rounded-md w-full h-auto"
+                        />
+                    </div>
+
+                    {/* Product Details */}
+                    <div className="w-full md:w-1/2">
+                        <h3 className="text-2xl font-semibold mb-4">Product Name</h3>
+                        <p className="text-xl text-primary mb-4">
+                            $20 <s>$50</s>}
+                        </p>
+                        <p className="text-gray-700 mb-4">Product Description</p>
+
+                        {/* Additional Product Information */}
+                        <div className="flex flex-col space-y-2">
+                            <p><strong>Category:</strong> Category</p>
+                            <p><strong>Color:</strong>Black</p>
+                            <div className='flex gap-1 items-center'>
+                                <strong>Rating: </strong>
+                               5
+                            </div>
+                        </div>
+
+                        {/* Add to Cart Button */}
+                        <button
+                            className="mt-6 px-6 py-3 bg-primary text-white rounded-md">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+<!--   reviews section -->
+ <section className="section__container mt-8">
+                <div className="my-6 bg-white p-8">
+            <div>
+                
+                    <div>
+                        <h3 className="text-lg font-medium">All Comments...</h3>
+                        <div>
+
+<!--                           cards -->
+                                <div key={index} className="mt-4">
+                                    <div className="flex gap-4 items-center">
+                                        <img src="reviewer-img.png" alt="" className="h-14 w-14" />
+                                        <div className="space-y-1">
+                                            <p className="text-lg font-medium underline capitalize underline-offset-4 text-blue-400">
+                                                Commentor
+                                            </p>
+                                            <p className="text-[12px] italic">
+                                                Posting data
+                                            </p>
+                                            <RatingStars rating={review.rating}/>
+                                        </div>
+                                    </div>
+
+                                    {/* Comment details */}
+                                    <div className="text-gray-600 mt-5 border p-8">
+                                        <p className="md:w-4/5">Your comments</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+              
+                    <p>No reviews yet.</p>
+           
+            </div>
+
+            {/* Add comment section */}
+            <div className='mt-12'>
+                <button
+                   
+                    className="px-6 py-3 bg-primary text-white rounded-md flex items-center gap-2"
+                >
+                    <i className="ri-pencil-line mr-2"></i> Add A Comment
+                </button>
+            </div>
+
+            {/* PostAReview Modal */}
+            <div
+            className={`fixed inset-0 bg-black/90 flex items-center justify-center z-40 px-2`}
+        >
+            <div className="bg-white p-6 rounded-md shadow-lg w-96 z-50">
+                <h2 className="text-lg font-bold mb-4">Post a Review</h2>
+
+                <div className="flex items-center mb-4">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                        <span
+                            key={star}
+                           
+                            className="cursor-pointer text-yellow-500 text-xl"
+                        >
+                            {rating >= star ? (
+                                <i className="ri-star-fill"></i>
+                            ) : (
+                                <i className="ri-star-line"></i>
+                            )}
+                        </span>
+                    ))}
+                </div>
+
+                <textarea
+                    
+                   
+                    rows="4"
+                    className="w-full border border-gray-300 p-2 rounded-md mb-4"
+                    placeholder="Write your comment here..."
+                />
+
+                <div className="flex justify-end gap-2">
+                    <button
+                       
+                        className="px-4 py-2 bg-gray-300 rounded-md flex items-center gap-2"
+                    >
+                        <i className="ri-close-line"></i> Cancel
+                    </button>
+                    <button
+                        o
+                        className="px-4 py-2 bg-primary text-white rounded-md flex items-center gap-2"
+                    >
+                        <i className="ri-check-line"></i> Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+            
+        </div>
+  </section>
+  
+</>
