@@ -1,0 +1,78 @@
+<div className="container mx-auto mt-8">
+            <h2 className="text-2xl font-bold mb-6">Update Product</h2>
+            <form className="space-y-4">
+                {/* product name */}
+                <TextInput
+                    label="Product Name"
+                    name="name"
+                    placeholder="Ex: Diamond Earrings"
+                    value={product.name}
+                    onChange={handleChange}
+                />
+
+                {/* category */}
+                <SelectInput
+                    label="Category"
+                    name="category"
+                    value={product.category}
+                    onChange={handleChange}
+                    options={categories}
+                />
+
+                {/* color */}
+                <SelectInput
+                    label="Color"
+                    name="color"
+                    value={product.color}
+                    onChange={handleChange}
+                    options={colors}
+                />
+
+                {/* price */}
+                <TextInput
+                    label="Price"
+                    name="price"
+                    type="number"
+                    placeholder="50"
+                    value={product.price}
+                    onChange={handleChange}
+                />
+
+                {/* image upload */}
+                <UploadImage
+                    name="image"
+                    id="image"
+                    value={newImage || product.image} 
+                    setImage={handleImageChange} 
+                    placeholder='Upload a product image'
+                />
+
+                {/* description */}
+                <div>
+                    <label htmlFor="description" className="block text-sm font-medium text-gray-700">
+                        Description
+                    </label>
+                    <textarea
+                        rows={6}
+                        name="description"
+                        id="description"
+                        value={product.description}
+                        placeholder='Write a product description'
+                        onChange={handleChange}
+                        className="add-product-InputCSS"
+                    />
+                </div>
+
+                <div>
+                    <button
+                        type="submit"
+                        className="add-product-btn"
+                        disabled={isUpdating}
+                    >
+                        {isUpdating ? 'Updating...' : 'Update Product'}
+                    </button>
+                </div>
+            </form>
+
+            {updateError && <p className="text-red-500 mt-4">Error updating product: {updateError.message}</p>}
+        </div>
